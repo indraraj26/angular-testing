@@ -72,6 +72,22 @@ describe("BookComponent", () => {
     expect(upvotes).toEqual(`${book.upvotes}`);
   });
 
+  xit("pending", () => {
+    let any: any = jasmine.any(Number);
+  });
+
+  it(`should set correct no of upvotes`, () => {
+    const counterVotes = component.votesCounter();
+    expect(component.votesCounter()).toEqual(counterVotes);
+  });
+
+  it(`upvote invoke the component function`, () => {
+    let spy = spyOn(component, "upVotes");
+    let div = nativeElement.querySelector(".book-upvotes") as HTMLElement;
+    div.click();
+    expect(spy).toHaveBeenCalled();
+  });
+
   // it(`should have author as 'indraraj'`, () => {
   //   expect(component.Author).toEqual("indraraj");
   // });

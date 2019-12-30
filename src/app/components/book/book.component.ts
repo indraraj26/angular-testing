@@ -18,4 +18,12 @@ export class BookComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  upVotes() {
+    this.mybook.upvotes = this.mybook.upvotes + 1;
+  }
+
+  votesCounter() {
+    return this.mybook.upvotes;
+  }
 }
